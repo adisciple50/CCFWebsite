@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Community Child Foundation - Accept Cookies </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<!-- Load Facebook -->
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '2234487983536976',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v3.2'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<div id="title" class="container">
+    <h1 align="center">Community Child Foundation</h1>
+    <h2 align="center">Caring For Children And The Poor</h2>
+</div>
+<!--https://getbootstrap.com/docs/4.0/components/navs/-->
+<nav class="navbar-light bg-light " id="navbarSupportedContent">
+    <ul class="nav nav-pills justify-content-center">
+        <li id="buttonleft" class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+        <li id="schoolnavbutton" class="nav-item"><a class="nav-link" href="#School">School</a></li>
+        <li id="orphanagenavbutton" class="nav-item"><a class="nav-link" href="#Orphanage">Orphanage</a></li>
+        <li id="middlebutton" class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+        <li id="buttonright" class="nav-item"><a class="nav-link" href="#Donate" onclick="change_view()">Donate</a></li>
+    </ul>
+</nav>
+<div id="viewport">
+    <!-- reference to boostrap4 is here https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp -->
+    <!--<div id="left-panel"> -->
+
+    <!-- https://www.iubenda.com/en/help/5525-cookies-and-eu-data-law-gdpr-requirements -->
+
+    <!--</div>-->
+    <!-- js scrape href tags and show view if [$*]-view contains href tags else visibility=hidden -->
+    <div id="center-panel">
+        <div class="controller-view" id="home-view">
+            <div>
+                <h1>Home</h1>
+            </div>
+            <content id="intro">
+                We are the community child foundation and we currently run a nonprofit school where orphans go free and we have ambitions for an orphanage as well.
+            </content>
+            <content id="facebook">
+                test
+            </content>
+        </div>
+        <div class="controller-view" id="school-view">
+            <div>
+                <h1>School</h1>
+            </div>
+        </div>
+        <div class="controller-view" id="orphanage-view">
+            <div>
+                <h1>Orphanage</h1>
+            </div>
+
+        </div>
+        <div class="controller-view" id="contact-view">
+            <div>
+                <h1>Contact</h1>
+            </div>
+        </div>
+        <div class="#controller-view" id="donate-view">
+            <div>
+                <h1>Donate</h1>
+            </div>
+            <!-- snippets modded from https://getbootstrap.com/docs/4.0/utilities/embed/ -->
+            <!-- 16:9 aspect ratio -->
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="accepted.html" class="embed-responsive-21by9">
+                </iframe>
+            </div>
+        </div>
+
+        </div>
+        <footer>
+            <div id="ngo-licence-number" class="panel">Ngo Number: 1986449</div>
+            <div id="company-number"> Nonprofit Company Number: <a href="https://brs.ursb.go.ug/brs/pro/bnr/searchname">80020000028891</a></div>
+            <div id="ngo-number"></div>
+            <div id="constitution-link"><a href="https://docs.google.com/document/d/1Bt6UbJMO7mLtKiHkJcq2jiXKI0hq6DBLtQLTDAVAxKA/edit?usp=sharing">View Constitution</a></div>
+            <!--<div></div>-->
+        </footer>
+    </div>
+    <!--hoisted javascript-->
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--Controller Script-->
+    <div id="CookieModal" class="modal">
+        <!-- with help from here:  https://getbootstrap.com/docs/4.0/components/modal/-->
+        <div class="modal-header"></div>
+        <div class="modal-body"> <p>This site contains 3rd party cookies that have tagged along from other sites.
+            <br> We ourselves dont track you or put cookies on your computer/device </p>></div>
+        <div class="modal-footer"><button class="btn" data-toggle="modal" onclick="open('index.html#Consented')">Accept</button> </div>
+    </div>
+    <script id="pageControllerScript">
+        function consent_modal(){
+            ;
+        }
+        function change_view(){
+            console.log('view changed')
+        }
+
+        $(Document).ready(function(){
+            // setup page to initial state.
+            views = $(".controller-view");
+            views.each(function () {
+                // hide each view
+                $(this).hide();
+            });
+            $('#home-view').show(); // also unhides donate-view. possibly due to iframe recursion. a bug.
+            $('#donate-view').hide(); // why this gets unhidden i dont know. bug workaround.
+
+            //currentview = $();
+            var current_anchor = window.location.anchor();
+
+
+
+    //views
+    }
+    );
+    </script>
+    <!--Page editor script placeholder-->
+    <script>
+        ;
+    </script>
+</div>
+</body>
+</html>
