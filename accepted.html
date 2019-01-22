@@ -35,10 +35,10 @@
 <!--https://getbootstrap.com/docs/4.0/components/navs/-->
 <nav class="navbar-light bg-light " id="navbarSupportedContent">
     <ul class="nav nav-pills justify-content-center">
-        <li id="buttonleft" class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
-        <li id="schoolnavbutton" class="nav-item"><a class="nav-link" href="#School">School</a></li>
-        <li id="orphanagenavbutton" class="nav-item"><a class="nav-link" href="#Orphanage">Orphanage</a></li>
-        <li id="middlebutton" class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+        <li id="buttonleft" class="nav-item"><a class="nav-link" href="#Home" onclick="change_view()">Home</a></li>
+        <li id="schoolnavbutton" class="nav-item"><a class="nav-link" href="#School" onclick="change_view()">School</a></li>
+        <li id="orphanagenavbutton" class="nav-item"><a class="nav-link" href="#Orphanage" onclick="change_view()">Orphanage</a></li>
+        <li id="middlebutton" class="nav-item"><a class="nav-link" href="#Contact" onclick="change_view()">Contact</a></li>
         <li id="buttonright" class="nav-item"><a class="nav-link" href="#Donate" onclick="change_view()">Donate</a></li>
     </ul>
 </nav>
@@ -115,7 +115,18 @@
             ;
         }
         function change_view(){
-            console.log('view changed')
+            console.log('view changed');
+            $('.nav-item').each(function () {
+                // console.log($(this).find('a').attr('href'));
+                console.log('window location hash is');
+                console.log(window.location.hash);
+                if($(this).find('a').attr('href') == window.location.hash){
+                    console.log('click detected');
+                    console.log(window.location.hash);
+                    $(this).find('a').addClass("active");
+                }
+
+            })
         }
 
         $(Document).ready(function(){
@@ -129,7 +140,7 @@
             $('#donate-view').hide(); // why this gets unhidden i dont know. bug workaround.
 
             //currentview = $();
-            var current_anchor = window.location.anchor();
+            var current_anchor = window.location.hash;
 
 
 
