@@ -57,7 +57,7 @@
     <!--</div>-->
     <!-- js scrape href tags and show view if [$*]-view contains href tags else visibility=hidden -->
     <div id="center-panel">
-        <div class="controller-view" id="home-view">
+        <div class="controller-view" id="home-view" hidden="true">
             <div>
                 <h1>Home</h1>
             </div>
@@ -121,35 +121,22 @@
             ;
         }
 
-        //        function change_view(){
-        //            console.log('view changed');
-        //            $('.nav-item').each(function () {
-        //                 console.log($(this).find('a').attr('href'));
-        //                console.log('window location hash is');
-        //                console.log(window.location.hash);
-        //                $(this).find('a').removeClass('active')
-        //                if($(this).find('a').attr('href') == window.location.hash){
-        //                    console.log('click detected');
-        //                    console.log(window.location.hash);
-        //                    $(this).find('a').addClass("active");
-        //                }
-        //
-        //            })
-        //        }
-
         $(Document).ready(function () {
                 // setup page to initial state.
                 // assuming page hash has changed.
                 var views = $(".controller-view");
                 // hide all views
-                views.each(function () {
-                    // hide each view
-                    $(this).hide();
-                });
+//                views.each(function () {
+//                     hide each view
+//                    $(this).hide();
+//                });
                 // load default view if this is the initial view.
                 var current_hash = window.location.hash; //shows the last clicked hash button href.
-                if (current_hash = "undefinedd") {
-                    $('#home-view').show(); // also unhides donate-view. possibly due to iframe recursion. a bug.
+                console.log("initial hash is : " + current_hash );
+                if (current_hash == "") {
+                    console.log("unhiding default view.");
+                    // remove hidden to unhide the default view.
+                    $('#home-view').removeAttr('hidden'); // also unhides donate-view. possibly due to iframe recursion. a bug.
                     $('#donate-view').hide(); // why this gets unhidden i dont know. bug workaround.
                 } else {
                     // if a button has been clicked before page reload.
@@ -168,13 +155,10 @@
                 $(this).find('a').removeClass('active')
                 if($(this).find('a').attr('href') == window.location.hash){
                     console.log('click detected');
-                    console.log(window.location.hash);
+                    console.log(current_hash);
                     $(this).find('a').addClass("active");
                 }
-
-                }
-                //
-
+            }
             )
     //views
     }
