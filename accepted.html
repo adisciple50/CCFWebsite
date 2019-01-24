@@ -70,8 +70,44 @@
         </div>
         <div class="controller-view" id="school-view" hidden="true">
             <div>
-                <h1>School</h1>
+                <h1 class="text-center">The School</h1>
             </div>
+            <content>
+                <article >
+                    <p class="text-center">The school is located in "" just outside of kampala, heading towards jinja, <br>
+                        where we educate primary school children and where orphans go free!</p>
+                    <p class="text-center">we currently fundraise for the orphans tuition and lunch which reduces the fees needed to be charged to the whole community.</p>
+                    <!-- with thanks to jetbrains rubymine for the spelling. -->
+                    <p class="text-center">we also do several grants and bursaries for which we need funding for to offer this generosity.</p>
+                    <!-- looked up from getbootstrap -->
+                    <div id="bursaries" class="d-flex flex-row justify-content-center">
+                        <!-- m-3 margains looked up from getbootstrap.com -->
+                        <div class="card w-25 m-3">
+                            <div class="card-title">
+                                <h2>Orphans Grant</h2>
+                            </div>
+                            <div class="card-body">Free education and school meals</div>
+                            <div class="card-footer">Total cost</div>
+                        </div>
+                        <div class="card w-25 m-3">
+                            <div class="card-title">
+                                <h2>Hardship Grant</h2>
+                            </div>
+                            <div class="card-body">reduced or free education and school meals for kids of disadvantaged families. </div>
+                            <div class="card-footer">Total cost</div>
+                        </div>
+                        <div class="card w-25 m-3">
+                            <div class="card-title">
+                                <h2>School Meal Grant</h2>
+                            </div>
+                            <div class="card-body">Free school meals for when the family is too poor to eat daily or afford school meals.</div>
+                            <div class="card-footer">Total cost</div>
+                        </div>
+                    </div>
+
+
+                </article>
+            </content>
         </div>
         <div class="controller-view" id="orphanage-view" hidden="true">
             <div>
@@ -91,17 +127,17 @@
             <!-- snippets modded from https://getbootstrap.com/docs/4.0/utilities/embed/ -->
             <!-- 16:9 aspect ratio -->
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="accepted.html" class="embed-responsive-21by9">
+                <iframe src="index.html" class="embed-responsive-21by9">
                 </iframe>
             </div>
         </div>
 
         </div>
-        <footer>
-            <div id="ngo-licence-number" class="panel">Ngo Number: 1986449</div>
-            <div id="company-number"> Nonprofit Company Number: <a href="https://brs.ursb.go.ug/brs/pro/bnr/searchname">80020000028891</a></div>
-            <div id="ngo-number"></div>
-            <div id="constitution-link"><a href="https://docs.google.com/document/d/1Bt6UbJMO7mLtKiHkJcq2jiXKI0hq6DBLtQLTDAVAxKA/edit?usp=sharing">View Constitution</a></div>
+        <footer class="d-flex flex-row justify-content-center">
+            <div id="ngo-licence-number" class="panel m-3">Ngo Number: 1986449</div>
+            <div id="company-number" class="panel m-3"> Nonprofit Company Number: <a href="https://brs.ursb.go.ug/brs/pro/bnr/searchname">80020000028891</a></div>
+            <div id="ngo-number" class="panel m-3"></div>
+            <div id="constitution-link" class="panel m-3"><a href="https://docs.google.com/document/d/1Bt6UbJMO7mLtKiHkJcq2jiXKI0hq6DBLtQLTDAVAxKA/edit?usp=sharing">View Constitution</a></div>
             <!--<div></div>-->
         </footer>
     </div>
@@ -148,6 +184,7 @@
                     $("#"+viewname).removeAttr('hidden');
                 }
 
+            // add active to the button for nav.
             console.log('view changed');
             $('.nav-item').each(function () {
                 // console.log($(this).find('a').attr('href'));
