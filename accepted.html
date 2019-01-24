@@ -135,16 +135,17 @@
                 console.log("initial hash is : " + current_hash );
                 if (current_hash == "") {
                     console.log("unhiding default view.");
-                    // remove hidden to unhide the default view.
+                    // remove hidden to unhide the default view. removeAttr is from the api.jquery.com site. Big thanks
                     $('#home-view').removeAttr('hidden'); // also unhides donate-view. possibly due to iframe recursion. a bug.
                     $('#donate-view').hide(); // why this gets unhidden i dont know. bug workaround.
                 } else {
                     // if a button has been clicked before page reload.
                     // thanks to w3 schools for string slice method.
-                    var viewnameslice = current_hash.toString().toLowerCase().slice(1, -6);
+                    var viewnameslice = current_hash.toString().toLowerCase().slice(1);
                     var viewname = viewnameslice + "-view"
                     console.log("viewname slice is:")
-                    console.log(viewnameslice)
+                    console.log(viewname)
+                    $("#"+viewname).removeAttr('hidden');
                 }
 
             console.log('view changed');
